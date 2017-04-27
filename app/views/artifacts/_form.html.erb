@@ -1,0 +1,37 @@
+<%= form_for(@artifact) do |f| %>
+  <% if @artifact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artifact.errors.count, "error") %> prohibited this artifact from being saved:</h2>
+
+      <ul>
+      <% @artifact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :upload, value: 'File to upload' %><br>
+    <%= f.file_field :upload %>
+  </div>
+  <div class="form-group">
+    <%= f.label :project_id %><br>
+    <%= f.text_field :project_id, class: 'form-control' %>
+  </div>
+  
+  <%= f.hidden_field :project_id %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    tenant_project_path(tenant_id: Tenant.current_tenant_id,
+    id: @artifact.project_id), :class => 'btn btn-default' %>
+    
+<% end %>
