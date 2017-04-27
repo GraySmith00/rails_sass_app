@@ -10,6 +10,7 @@ class ArtifactsController < ApplicationController
   # GET /artifacts/1
   # GET /artifacts/1.json
   def show
+    
   end
 
   # GET /artifacts/new
