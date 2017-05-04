@@ -8,15 +8,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.delivery_method = :smtp
-  
-  ActionMailer::Base.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => "587",
-    :authentication => :plain,
-    :user_name => "do-not-reply@example.com",
-    :password => ENV["SMTP_ENTRY"],
-    :enable_starttls_auto => true
-  }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
