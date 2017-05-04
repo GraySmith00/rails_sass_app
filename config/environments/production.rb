@@ -1,11 +1,4 @@
 Rails.application.configure do
-   
-  # devise says to define default url
-  #config.action_mailer.default_url_options = { :host => 'secure.simple-milia-app.com', :protocol => 'https' }
-  #config.action_mailer.default_url_options = { :host => 'https://gray-photo-app.herokuapp.com', :protocol => 'https'}
-
-  #ActionMailer::Base.delivery_method = :smtp
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -16,9 +9,8 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-  
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'gray-rails-sass.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options = { :host => 'https://gray-rails-sass.herokuapp.com', :protocol => 'https'}
 
 
   # Full error reports are disabled and caching is turned on.
